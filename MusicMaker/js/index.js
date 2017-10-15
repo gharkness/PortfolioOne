@@ -26,82 +26,12 @@ var frequencies = [
     [1760.00, 1864.66, 1975.53, 2093.00, 2217.46, 2349.32, 2489.02, 2637.02, 2793.83, 2959.96, 3135.96, 3322.44],
 ];
 
+
+
 var notePlaying = false;
 
-$('#cNote').click(function() {
-    oscillator.frequency.value = 261.63;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#cSharpNote').click(function() {
-    oscillator.frequency.value = 277.18;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#dNote').click(function() {
-    oscillator.frequency.value = 293.66;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#dSharpNote').click(function() {
-    oscillator.frequency.value = 311.13;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#eNote').click(function() {
-    oscillator.frequency.value = 329.63;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#fNote').click(function() {
-    oscillator.frequency.value = 349.23;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#fSharpNote').click(function() {
-    oscillator.frequency.value = 369.99;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#gNote').click(function() {
-    oscillator.frequency.value = 392.00;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
-$('#gSharpNote').click(function() {
-    oscillator.frequency.value = 415.30;
-    if (!notePlaying) {
-        oscillator.start(0);
-        notePlaying = true;
-    }
-});
-
 $('#aNote').click(function() {
-    oscillator.frequency.value = 440.00;
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][0];
     if (!notePlaying) {
         oscillator.start(0);
         notePlaying = true;
@@ -109,7 +39,7 @@ $('#aNote').click(function() {
 });
 
 $('#aSharpNote').click(function() {
-    oscillator.frequency.value = 466.16;
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][1];
     if (!notePlaying) {
         oscillator.start(0);
         notePlaying = true;
@@ -117,7 +47,79 @@ $('#aSharpNote').click(function() {
 });
 
 $('#bNote').click(function() {
-    oscillator.frequency.value = 493.88;
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][2];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#cNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][3];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#cSharpNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][4];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#dNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][5];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#dSharpNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][6];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#eNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][7];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#fNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][8];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#fSharpNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][9];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#gNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][10];
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+$('#gSharpNote').click(function() {
+    oscillator.frequency.value = frequencies[$("#octaveSelector").val()][11];
     if (!notePlaying) {
         oscillator.start(0);
         notePlaying = true;
