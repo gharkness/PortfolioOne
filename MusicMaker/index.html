@@ -11,32 +11,37 @@
         <script src="js/index.js" charset="utf-8"></script>
     </head>
     <body>
-        <h1>Music Maker</h1>
-        Octave:
-        <select id="octaveSelector">
-            <option value="0">First</option>
-            <option value="1">Second</option>
-            <option value="2">Third</option>
-            <option value="3" selected="selected">Fourth</option>
-            <option value="4">Fifth</option>
-            <option value="5">Sixth</option>
-            <option value="6">Seventh</option>
-        </select>
+        <div class="jumbotron">
+            <h1>Music Maker</h1>
+            <h6 class="text-muted">Simple music creation in the browser.</h6>
+        </div>
+        <div id="octaveDiv">
+            Octave:
+            <select id="octaveSelector">
+                <option value="0">First</option>
+                <option value="1">Second</option>
+                <option value="2">Third</option>
+                <option value="3" selected="selected">Fourth</option>
+                <option value="4">Fifth</option>
+                <option value="5">Sixth</option>
+                <option value="6">Seventh</option>
+            </select>
+        </div>
         <br />
-        <br />
-        <button class="normal" id="aNote">A</button>
-        <button class="sharp" id="aSharpNote">A#</button>
-        <button class="normal" id="bNote">B</button>
-        <button class="normal" id="cNote">C</button>
-        <button class="sharp" id="cSharpNote">C#</button>
-        <button class="normal" id="dNote">D</button>
-        <button class="sharp" id="dSharpNote">D#</button>
-        <button class="normal" id="eNote">E</button>
-        <button class="normal" id="fNote">F</button>
-        <button class="sharp" id="fSharpNote">F#</button>
-        <button class="normal" id="gNote">G</button>
-        <button class="sharp" id="gSharpNote">G#</button>
-        <button class="normal" id="stopButton">Stop Playing</button>
+        <div id="keyboardDiv">
+            <button id="aNote" class="btn btn-default btn-lg">A</button>
+            <button id="aSharpNote" class="btn btn-primary btn-lg">A#</button>
+            <button id="bNote" class="btn btn-default btn-lg">B</button>
+            <button id="cNote" class="btn btn-default btn-lg">C</button>
+            <button id="cSharpNote" class="btn btn-primary btn-lg">C#</button>
+            <button id="dNote" class="btn btn-default btn-lg">D</button>
+            <button id="dSharpNote" class="btn btn-primary btn-lg">D#</button>
+            <button id="eNote" class="btn btn-default btn-lg">E</button>
+            <button id="fNote" class="btn btn-default btn-lg">F</button>
+            <button id="fSharpNote" class="btn btn-primary btn-lg">F#</button>
+            <button id="gNote" class="btn btn-default btn-lg">G</button>
+            <button id="gSharpNote" class="btn btn-primary btn-lg">G#</button>
+        </div>
     </body>
 
 </html>

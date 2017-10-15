@@ -172,9 +172,97 @@ $('#gSharpNote').mouseup(function() {
     oscillator.frequency.value = 0;
 });
 
-$('#stopButton').click(function() {
+$(document).keypress(function(e) {
+    switch(e.which) {
+        case 113:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][0];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 50:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][1];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 119:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][2];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 101:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][3];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 52:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][4];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 114:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][5];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 53:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][6];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 116:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][7];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 121:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][8];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 55:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][9];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 117:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][10];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+        case 56:
+            oscillator.frequency.value = frequencies[$("#octaveSelector").val()][11];
+            if (!notePlaying) {
+                oscillator.start(0);
+                notePlaying = true;
+            }
+            break;
+    }
+});
+
+$(document).keyup(function() {
     oscillator.frequency.value = 0;
-    notePlaying = false;
 });
 
 });

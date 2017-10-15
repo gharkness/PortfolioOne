@@ -1,3 +1,17 @@
-h1 {
-    color: blue;
+h1, h6 {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#keyboardDiv {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#octaveDiv {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
 }
