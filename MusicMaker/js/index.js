@@ -114,4 +114,14 @@ $('#bNote').click(function() {
     }
 });
 
+$('#stopButton').click(function () {
+    oscillator.frequency.value = 0;
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
+});
+
+
+
 });
