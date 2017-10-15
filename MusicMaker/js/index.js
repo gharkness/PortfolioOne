@@ -16,64 +16,102 @@ gain.connect(context.destination);
 
 var cNoteBtn = document.getElementById("cNote");
 
+var notePlaying = false;
+
 $('#cNote').click(function() {
     oscillator.frequency.value = 261.63;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#cSharpNote').click(function() {
     oscillator.frequency.value = 277.18;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#dNote').click(function() {
     oscillator.frequency.value = 293.66;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#dSharpNote').click(function() {
     oscillator.frequency.value = 311.13;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#eNote').click(function() {
     oscillator.frequency.value = 329.63;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#fNote').click(function() {
     oscillator.frequency.value = 349.23;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#fSharpNote').click(function() {
     oscillator.frequency.value = 369.99;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#gNote').click(function() {
     oscillator.frequency.value = 392.00;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#gSharpNote').click(function() {
     oscillator.frequency.value = 415.30;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#aNote').click(function() {
     oscillator.frequency.value = 440.00;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#aSharpNote').click(function() {
     oscillator.frequency.value = 466.16;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 $('#bNote').click(function() {
     oscillator.frequency.value = 493.88;
-    oscillator.start(0);
+    if (!notePlaying) {
+        oscillator.start(0);
+        notePlaying = true;
+    }
 });
 
 });
