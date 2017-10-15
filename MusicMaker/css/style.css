@@ -4,13 +4,7 @@ h1, h6 {
     text-align: center;
 }
 
-#keyboardDiv {
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-}
-
-#octaveDiv {
+#keyboardDiv, #octaveDiv, #directionsDiv {
     margin: auto;
     padding: 10px;
     text-align: center;
