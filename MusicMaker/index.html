@@ -32,6 +32,25 @@
             <button id="gSharpNote" class="btn btn-primary btn-lg">G#</button>
         </div>
         <br>
+        <div id="effectsDiv">
+            <div id="chorusDiv">
+                <h6>Chorus</h6>
+                Rate: <input type="range" min="0.01" max="8" value="1.5" class="slider" step="0.1" id="chorusRateRange">
+                <br>
+                Feedback: <input type="range" min="0" max="1" value="0.2" class="slider" id="chorusFeedbackRange" step="0.01">
+                <br>
+                Delay: <input type="range" min="0" max="1" value="0.0045" class="slider" id="chorusDelayRange" step="0.01">
+                <br>
+                <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off" id="chorusBypassBtn">
+                    Bypass
+                </button>
+            </div>
+            <br>
+            <div id="delayDiv">
+                Delay
+            </div>
+        </div>
+        <br>
         <div id="octaveDiv">
             Octave:
             <select id="octaveSelector">
@@ -54,18 +73,59 @@
             </select>
         </div>
         <div id="directionsDiv">
-            q key: A <br />
-            2 key: A# <br />
-            w key: B <br />
-            e key: C <br />
-            4 key: C# <br />
-            r key: D <br />
-            5 key: D# <br />
-            t key: E <br />
-            y key: F <br />
-            7 key: F# <br />
-            u key: G <br />
-            8 key: G# <br />
+            <h3>Key Mappings:</h3>
+            <table class="table table-striped">
+                <th>Key</th>
+                <th>Function</th>
+                <tr>
+                    <td><code>q</code></td>
+                    <td>A Note</td>
+                </tr>
+                <tr>
+                    <td><code>2</code></td>
+                    <td>A# Note</td>
+                </tr>
+                <tr>
+                    <td><code>w</code></td>
+                    <td>B Note</td>
+                </tr>
+                <tr>
+                    <td><code>e</code></td>
+                    <td>C Note</td>
+                </tr>
+                <tr>
+                    <td><code>4</code></td>
+                    <td>C# Note</td>
+                </tr>
+                <tr>
+                    <td><code>r</code></td>
+                    <td>D Note</td>
+                </tr>
+                <tr>
+                    <td><code>5</code></td>
+                    <td>D# Note</td>
+                </tr>
+                <tr>
+                    <td><code>t</code></td>
+                    <td>E Note</td>
+                </tr>
+                <tr>
+                    <td><code>y</code></td>
+                    <td>F Note</td>
+                </tr>
+                <tr>
+                    <td><code>7</code></td>
+                    <td>F# Note</td>
+                </tr>
+                <tr>
+                    <td><code>u</code></td>
+                    <td>G Note</td>
+                </tr>
+                <tr>
+                    <td><code>8</code></td>
+                    <td>G# Note</td>
+                </tr>
+            </table>
         </div>
     </body>
 

@@ -10,11 +10,31 @@ oscillator.type = oscillator.SINE;
 
 var gain = context.createGain();
 
+var notePlaying = false;
+
+var chorus = new tuna.Chorus({
+    rate: 1.5,         //0.01 to 8+
+    feedback: 0.2,     //0 to 1+
+    delay: 0.0045,     //0 to 1
+    bypass: 0          //the value 1 starts the effect as bypassed, 0 or 1
+});
+
+var input = context.createGain();
+var output = context.createGain();
+
 gain.gain.value = 0.3;
 
-oscillator.connect(gain);
+oscillator.connect(input);
 
-gain.connect(context.destination);
+input.connect(chorus);
+chorus.connect(output);
+output.connect(context.destination);
+
+//gain.connect(context.destination);
+
+//gain.connect(chorus);
+
+//chorus.connect(context.destination);
 
 var curOctave = 3;
 
@@ -279,6 +299,29 @@ $('#typeSelector').change(function() {
         oscillator.type = oscillator.TRIANGLE;
     } else if (type === 'Square') {
         oscillator.type = oscillator.SQUARE;
+    }
+});
+
+$('#chorusRateRange').change(function() {
+    var rateValue = $('#chorusRateRange').val();
+    chorus.rate = rateValue;
+});
+
+$('#chorusFeedbackRange').change(function() {
+    var fbackValue = $('#chorusFeedbackRange').val();
+    chorus.feedback = fbackValue;
+});
+
+$('#chorusDelayRange').change(function() {
+    var delayValue = $('#chorusDelayRange').val();
+    chorus.delay = delayValue;
+});
+
+$('#chorusBypassBtn').click(function() {
+    if (chorus.bypass == 0) {
+        chorus.bypass = 1;
+    } else if (chorus.bypass == 1) {
+        chorus.bypass = 0;
     }
 });
 

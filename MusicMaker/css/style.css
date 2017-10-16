@@ -4,10 +4,15 @@ h1, h6 {
     text-align: center;
 }
 
-#keyboardDiv, #octaveDiv, #directionsDiv {
+#keyboardDiv, #octaveDiv, #effectsDiv {
     margin: auto;
     padding: 10px;
     text-align: center;
+}
+
+#directionsDiv {
+    margin: auto;
+    padding: 10px;
 }
 
 select {
