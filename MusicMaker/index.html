@@ -9,12 +9,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script src="js/index.js" charset="utf-8"></script>
+        <script src="includes/tuna.js" charset="utf-8"></script>
     </head>
     <body>
         <div class="jumbotron">
             <h1>Music Maker</h1>
             <h6 class="text-muted">Simple music creation in the browser.</h6>
         </div>
+        <br />
+        <div id="keyboardDiv">
+            <button id="aNote" class="btn btn-default btn-lg">A</button>
+            <button id="aSharpNote" class="btn btn-primary btn-lg">A#</button>
+            <button id="bNote" class="btn btn-default btn-lg">B</button>
+            <button id="cNote" class="btn btn-default btn-lg">C</button>
+            <button id="cSharpNote" class="btn btn-primary btn-lg">C#</button>
+            <button id="dNote" class="btn btn-default btn-lg">D</button>
+            <button id="dSharpNote" class="btn btn-primary btn-lg">D#</button>
+            <button id="eNote" class="btn btn-default btn-lg">E</button>
+            <button id="fNote" class="btn btn-default btn-lg">F</button>
+            <button id="fSharpNote" class="btn btn-primary btn-lg">F#</button>
+            <button id="gNote" class="btn btn-default btn-lg">G</button>
+            <button id="gSharpNote" class="btn btn-primary btn-lg">G#</button>
+        </div>
+        <br>
         <div id="octaveDiv">
             Octave:
             <select id="octaveSelector">
@@ -35,21 +52,6 @@
                 <option value="sawtooth">Sawtooth</option>
                 <option value="triangle">Triangle</option>
             </select>
-        </div>
-        <br />
-        <div id="keyboardDiv">
-            <button id="aNote" class="btn btn-default btn-lg">A</button>
-            <button id="aSharpNote" class="btn btn-primary btn-lg">A#</button>
-            <button id="bNote" class="btn btn-default btn-lg">B</button>
-            <button id="cNote" class="btn btn-default btn-lg">C</button>
-            <button id="cSharpNote" class="btn btn-primary btn-lg">C#</button>
-            <button id="dNote" class="btn btn-default btn-lg">D</button>
-            <button id="dSharpNote" class="btn btn-primary btn-lg">D#</button>
-            <button id="eNote" class="btn btn-default btn-lg">E</button>
-            <button id="fNote" class="btn btn-default btn-lg">F</button>
-            <button id="fSharpNote" class="btn btn-primary btn-lg">F#</button>
-            <button id="gNote" class="btn btn-default btn-lg">G</button>
-            <button id="gSharpNote" class="btn btn-primary btn-lg">G#</button>
         </div>
         <div id="directionsDiv">
             q key: A <br />

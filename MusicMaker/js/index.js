@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 var context = new (window.AudioContext || window.webkitAudioContext)();
 
+var tuna = new Tuna(context);
+
 var oscillator = context.createOscillator();
 
 oscillator.type = oscillator.SINE;
