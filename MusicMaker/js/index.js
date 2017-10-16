@@ -16,6 +16,8 @@ gain.connect(context.destination);
 
 var cNoteBtn = document.getElementById("cNote");
 
+var curOctave = 3;
+
 var frequencies = [
     [27.5, 29.14, 30.87, 32.70, 34.65, 36.71, 38.90, 41.20, 43.70, 46.25, 49.00, 51.91],
     [55.00, 58.27, 61.74, 65.41, 69.30, 73.42, 77.78, 82.41, 87.31, 92.50, 98.00, 103.83],
@@ -258,8 +260,28 @@ $(document).keypress(function(e) {
                 notePlaying = true;
             }
             break;
+        case 61:
+            octaveUp();
+            break;
+        case 45:
+            octaveDown();
+            break;
     }
 });
+
+function octaveUp() {
+    if (curOctave < 6) {
+        $('#octaveSelector').val(curOctave + 1).change();
+        curOctave += 1;
+    }
+}
+
+function octaveDown() {
+    if (curOctave >= 1) {
+        $('#octaveSelector').val(curOctave - 1).change();
+        curOctave -= 1;
+    }
+}
 
 $(document).keyup(function() {
     oscillator.frequency.value = 0;
