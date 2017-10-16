@@ -14,8 +14,6 @@ oscillator.connect(gain);
 
 gain.connect(context.destination);
 
-var cNoteBtn = document.getElementById("cNote");
-
 var curOctave = 3;
 
 var frequencies = [
@@ -266,6 +264,19 @@ $(document).keypress(function(e) {
         case 45:
             octaveDown();
             break;
+    }
+});
+
+$('#typeSelector').change(function() {
+    var type = $('#typeSelector option:selected').text();
+    if (type === 'Sine') {
+        oscillator.type = oscillator.SINE;
+    } else if (type === 'Sawtooth') {
+        oscillator.type = oscillator.SAWTOOTH;
+    } else if (type === 'Triangle') {
+        oscillator.type = oscillator.TRIANGLE;
+    } else if (type === 'Square') {
+        oscillator.type = oscillator.SQUARE;
     }
 });
 

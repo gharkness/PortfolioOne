@@ -9,3 +9,7 @@ h1, h6 {
     padding: 10px;
     text-align: center;
 }
+
+select {
+    padding: 20px;
+}
