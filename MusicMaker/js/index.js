@@ -19,6 +19,37 @@ var chorus = new tuna.Chorus({
     bypass: 0          //the value 1 starts the effect as bypassed, 0 or 1
 });
 
+var moog = new tuna.MoogFilter({
+    cutoff: 0.065,    //0 to 1
+    resonance: 3.5,   //0 to 4
+    bufferSize: 4096  //256 to 16384
+});
+
+var tremolo = new tuna.Tremolo({
+    intensity: 0.3,    //0 to 1
+    rate: 4,         //0.001 to 8
+    stereoPhase: 0,    //0 to 180
+    bypass: 0
+});
+
+var phaser = new tuna.Phaser({
+    rate: 1.2,                     //0.01 to 8 is a decent range, but higher values are possible
+    depth: 0.3,                    //0 to 1
+    feedback: 0.2,                 //0 to 1+
+    stereoPhase: 30,               //0 to 180
+    baseModulationFrequency: 700,  //500 to 1500
+    bypass: 0
+});
+
+var delay = new tuna.Delay({
+    feedback: 0.45,    //0 to 1+
+    delayTime: 150,    //1 to 10000 milliseconds
+    wetLevel: 0.25,    //0 to 1+
+    dryLevel: 1,       //0 to 1+
+    cutoff: 2000,      //cutoff frequency of the built in lowpass-filter. 20 to 22050
+    bypass: 0
+});
+
 var input = context.createGain();
 var output = context.createGain();
 
@@ -26,8 +57,12 @@ gain.gain.value = 0.3;
 
 oscillator.connect(input);
 
-input.connect(chorus);
-chorus.connect(output);
+input.connect(moog);
+moog.connect(chorus);
+chorus.connect(phaser);
+phaser.connect(tremolo);
+tremolo.connect(delay);
+delay.connect(output);
 output.connect(context.destination);
 
 //gain.connect(context.destination);
@@ -302,6 +337,9 @@ $('#typeSelector').change(function() {
     }
 });
 
+//
+//  Chorus Controls
+//
 $('#chorusRateRange').change(function() {
     var rateValue = $('#chorusRateRange').val();
     chorus.rate = rateValue;
@@ -324,6 +362,112 @@ $('#chorusBypassBtn').click(function() {
         chorus.bypass = 0;
     }
 });
+
+//
+//  Moog Controls
+//
+$('#moogCutoffRange').change(function() {
+    var cutoffValue = $('#moogCutoffRange').val();
+    moog.cutoff = cutoffValue;
+});
+
+$('#moogResonanceRange').change(function() {
+    var resonanceValue = $('#moogResonanceRange').val();
+    moog.resonance = resonanceValue;
+});
+
+$('#moogBypassBtn').click(function() {
+    if (moog.bypass == 0) {
+        moog.bypass = 1;
+    } else if (moog.bypass == 1) {
+        moog.bypass = 0;
+    }
+});
+
+//
+//  Phaser Controls
+//
+$('#phaserRateRange').change(function() {
+    phaser.rate = $('#phaserRateRange').val();
+});
+
+$('#phaserDepthRange').change(function() {
+    phaser.depth = $('#phaserDepthRange').val();
+});
+
+$('#phaserFeedbackRange').change(function() {
+    phaser.feedback = $('#phaserFeedbackRange').val();
+});
+
+$('#phaserStereoPhaseRange').change(function() {
+    phaser.stereoPhase = $('#phaserStereoPhaseRange').val();
+});
+
+$('#phaserBaseModulationFrequencyRange').change(function() {
+    phaser.baseModulationFrequency = $('#phaserBaseModulationFrequencyRange').val();
+});
+
+$('#phaserBypassBtn').click(function() {
+    if (phaser.bypass == 0) {
+        phaser.bypass = 1;
+    } else if (phaser.bypass == 1) {
+        phaser.bypass = 0;
+    }
+});
+
+//
+//  Tremolo Controls
+//
+$('#tremoloIntensityRange').change(function() {
+    tremolo.intensity = $('#tremoloIntensityRange').val();
+});
+
+$('#tremoloRateRange').change(function() {
+    tremolo.rate = $('#tremoloRateRange').val();
+});
+
+$('#tremoloStereoPhaseRange').change(function() {
+    tremolo.stereoPhase = $('#tremoloStereoPhaseRange').val();
+});
+
+$('#tremoloBypassBtn').click(function() {
+    if (tremolo.bypass == 0) {
+        tremolo.bypass = 1;
+    } else if (tremolo.bypass == 1) {
+        tremolo.bypass = 0;
+    }
+});
+
+//
+//  Delay Controls
+//
+$('#delayFeedbackRange').change(function() {
+    delay.feedback = $('#delayFeedbackRange').val();
+});
+
+$('#delayTimeRange').change(function() {
+    delay.delayTime = $('#delayTimeRange').val();
+});
+
+$('#delayWetLevelRange').change(function() {
+    delay.wetLevel = $('#delayWetLevelRange').val();
+});
+
+$('#delayDryLevelRange').change(function() {
+    delay.dryLevel = $('#delayDryLevelRange').val();
+});
+
+$('#delayCutoffRange').change(function() {
+    delay.cutoff = $('#delayCutoffRange').val();
+});
+
+$('#delayBypassBtn').click(function() {
+    if (delay.bypass == 0) {
+        delay.bypass = 1;
+    } else if (delay.bypass == 1) {
+        delay.bypass = 0;
+    }
+})
 
 function octaveUp() {
     if (curOctave < 6) {
